@@ -1,15 +1,20 @@
 numTilings = 8
 
 def inputs_to_index(in1, in2):
-    return (in1/6.) + (10* (in2/6.))
+
+    # print(
+    #     """
+    #     inputs      {0}, {1}
+    #     normalized  {2}, {3}
+    #     """.format(in1, in2, (, ))
+    return int(in1/6.) + 10 * int(in2 / (6/10.))
 
 
 def tilecode(in1,in2,tileIndices):
     # write your tilecoder here (5 lines or so)
     # for each of the tilings, return the active feature
     for i in range(numTilings):
-        shift = i*(numTilings/6.)
-        print(11**2 * i)
+        shift = i*(6/10./numTilings)
         tileIndices[i] = inputs_to_index(in1+shift, in2+shift) + (11**2 * i)
     
 def printTileCoderIndices(in1,in2):
