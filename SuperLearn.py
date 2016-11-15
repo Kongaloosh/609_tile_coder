@@ -1,7 +1,7 @@
-from pylab import zeros, sin, cos, normal, random, dot
+from pylab import zeros, sin, cos, normal, random, dot, nonzero
 from Tilecoder import numTilings, tilecode
 
-n = 967
+n = 968
 theta = zeros(n)                              # initialize weights appropriately here
 alpha = 0.1/numTilings                        # initialize step size parameter appropriately here
 indices = zeros(numTilings)                   # initialize your list of tile indices here
@@ -10,9 +10,9 @@ indices = zeros(numTilings)                   # initialize your list of tile ind
 def f(in1,in2):
     # write your linear function approximator here (5 lines or so)
     features = zeros(n)
+    global theta
     for i in tilecode(in1, in2, indices):
         features[i] = 1
-
     return dot(theta, features)
 
 
@@ -46,8 +46,8 @@ def train(numSteps):
     for i in range(numSteps):
         in1 = random() * 6.0
         in2 = random() * 6.0
-        target = targetFunction(in1,in2)
-        learn(in1,in2,target)
+        target = targetFunction(in1, in2)
+        learn(in1, in2, target)
     
 def writeF(filename):
     fout = open(filename, 'w')
@@ -77,5 +77,5 @@ def test2():
         MSE(10000)
     writeF('f10000')
 
-test1()
-
+# test1()
+test2()
