@@ -16,7 +16,8 @@ def tilecode(in1,in2,tileIndices):
     for i in range(numTilings):
         shift = i*(6/10./numTilings)
         tileIndices[i] = inputs_to_index(in1+shift, in2+shift) + (11**2 * i)
-    
+    return tileIndices
+
 def printTileCoderIndices(in1,in2):
     tileIndices = [-1]*numTilings
     tilecode(in1,in2,tileIndices)
