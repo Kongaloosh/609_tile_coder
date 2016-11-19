@@ -21,10 +21,10 @@ def tilecode(in1,in2,tileIndices):
         tileIndices[i] = inputs_to_index(in1+shift, in2+shift) + (11**2 * i)
     return tileIndices
 
-def printTileCoderIndices(in1,in2):
-    tileIndices = [-1]*numTilings
-    tilecode(in1,in2,tileIndices)
-    print('Tile indices for input (',in1,',',in2,') are : ', tileIndices)
+def printTileCoderIndices(in1, in2):
+    tileIndices = [-1] * numTilings
+    tilecode(in1, in2, tileIndices)
+    print('Tile indices for input (', in1, ',', in2,') are : ', tileIndices)
 
 printTileCoderIndices(0.1, 0.1)
 printTileCoderIndices(4.0, 2.0)
