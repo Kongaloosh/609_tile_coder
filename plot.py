@@ -3,8 +3,6 @@ Created on Nov 17, 2011
  
 @author: rupam
 '''
-import sys
-from numpy import *
 from pylab import *
 from mpl_toolkits.mplot3d import Axes3D
  
